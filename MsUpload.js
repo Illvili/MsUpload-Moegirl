@@ -8,9 +8,9 @@ function fileError( uploader, file, errorText ) {
 	file.li.type.addClass( 'error' );
 	file.li.click( function () { // Remove li at click
 		file.li.fadeOut( 'slow', function () {
-	 		$( this ).remove();
-	 		uploader.trigger( 'CheckFiles' );
-	 	});
+			$( this ).remove();
+			uploader.trigger( 'CheckFiles' );
+		});
 	});
 }
 
@@ -188,7 +188,7 @@ function createUpload( wikiEditor ) {
 		'id': 'upload-container',
 		'title': mw.msg( 'msu-button-title' ),
 		'class': 'start-loading'
- 	}).append( uploadButton );
+	}).append( uploadButton );
 
 	var uploadDiv = $( '<div/>' ).attr( 'id', 'upload-div' );
 	if ( wikiEditor === true ) {
@@ -249,9 +249,9 @@ function createUpload( wikiEditor ) {
 			}).bind( 'drop',function () {
 				 $( this ).removeClass( 'drop-over' ).css( 'padding', 0 );
 			});
-	 	} else {
-	 		uploadDiv.addClass( 'nodragdrop' );
-	 	}
+		} else {
+			uploadDiv.addClass( 'nodragdrop' );
+		}
 	});
 
 	uploader.bind( 'FilesAdded', function ( up, files ) {
@@ -271,6 +271,11 @@ function createUpload( wikiEditor ) {
 			file.li.loading = $( '<span/>' ).attr( 'class', 'file-loading' ).appendTo( file.li );
 			file.li.warning = $( '<span/>' ).attr( 'class', 'file-warning' ).appendTo( file.li );
 			checkExtension( file, up );
+			// moegirl-special FilesAdded
+			file.li.special = $('<div class="morgirl-special"></div>').appendTo(file.li);
+			file.li.special.author = $('<label><span>&lt;作者&gt;</span><input class="mgs-author" /></label>').appendTo(file.li.special);
+			file.li.special.source = $('<label><span>&lt;源地址&gt;</span><input class="mgs-source" /></label>').appendTo(file.li.special);
+			// /moegirl-special FilesAdded
 		});
 		up.refresh(); // Reposition Flash/Silverlight
 		up.trigger( 'CheckFiles' );
@@ -305,6 +310,17 @@ function createUpload( wikiEditor ) {
 		}; // Set multipart_params
 		$( '#' + file.id + ' div.file-progress-bar' ).progressbar({ value: '1' });
 		$( '#' + file.id + ' span.file-progress-state' ).html( '0%' );
+
+		// moegirl-special BeforeUpload
+		var comment = [],
+				mgs_author = file.li.special.author.find('input').attr('readonly', true).val(),
+				mgs_source = file.li.special.source.find('input').attr('readonly', true).val();
+		comment.push('[[分类:', mw.config.get("wgPageName"), ']]');
+		if (mgs_author) comment.push(' [[分类:作者:', mgs_author, ']]');
+		if (mgs_source) comment.push(' 源地址:[', mgs_source, ']');
+
+		up.settings.multipart_params.comment = comment.join('');
+		// /moegirl-special BeforeUpload
 	});
 
 	uploader.bind( 'UploadProgress', function (up, file) {
@@ -329,11 +345,19 @@ function createUpload( wikiEditor ) {
 		$( '#' + file.id + ' div.file-progress-bar' ).fadeOut( 'slow' );
 		$( '#' + file.id + ' span.file-xprogress-state' ).fadeOut( 'slow' );
 
+		// moegirl-special FileUploaded
+		file.li.special.find('input').attr('readonly', false);
+		// /moegirl-special FileUploaded
+
 		try {
 			var result = jQuery.parseJSON( success.response );
 			if ( result.error ) {
 				fileError( up, file, result.error.info );
 			} else {
+				// moegirl-special FileUploaded
+				file.li.special.slideUp("slow");
+				// /moegirl-special FileUploaded
+
 				file.li.type.addClass( 'ok' );
 				file.li.addClass( 'green' );
 				file.li.warning.fadeOut( 'slow' );
