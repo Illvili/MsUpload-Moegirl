@@ -359,7 +359,7 @@ function createUpload( wikiEditor ) {
 					}
 					$( '<span/>' ).text( ' | ' ).appendTo( file.li );
 					$( '<a/>' ).text( mw.msg('msu-insert-picture' ) ).click( function () {
-						mw.toolbar.insertTags( '[[File:' + file.name + msuVars.imgParams + ']]', '', '', '' );
+						mw.toolbar.insertTags( '[[File:' + file.name + ( msuVars.imgParams || '' ) + ']]', '', '', '' );
 					}).appendTo( file.li );
 				} else if ( file.group === 'mov' ) {
 					$( '<span/>' ).text(' | ').appendTo( file.li );
