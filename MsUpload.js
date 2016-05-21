@@ -357,7 +357,7 @@ function createUpload( wikiEditor ) {
 		if (mgs_author) comment.push(' [[分类:作者:', mgs_author, ']]');
 		if (mgs_source) comment.push(' 源地址:[', mgs_source, ']');
 
-		up.settings.multipart_params.comment = comment.join('');
+		uploader.settings.multipart_params.comment = comment.join('');
 		// moegirl-special BeforeUpload
 	});
 
