@@ -1,6 +1,26 @@
 ﻿MsUpload
 ========
 
+What's modified
+---------------
+
+修改版添加了图片注释自动添加分类（category:pagename）以及额外的作者名和源地址输入框
+
+自动识别页面标题生成[[分类:页面名]]。
+
+以及两个输入框。
+
+作者，生成 [[分类:作者:输入参数]]。
+
+源地址，生成 源地址:输入内容
+
+举例：
+
+在页面 舰队Collection荒潮 通过MsUploadMoegirlVer上传图片，在作者栏输入コニシ，在原地址栏输入http://www55.xxxxxxxxxxxxx.com
+
+上传图片产生的对应页面输出结果： [[分类:作者:コニシ]] [[分类:舰队Collection荒潮]] 源地址:http://www55.xxxxxxxxxxxxx.com
+
+
 Installation
 ------------
 To install MsUpload, add the following to your LocalSettings.php:
