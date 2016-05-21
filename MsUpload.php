@@ -3,9 +3,9 @@
 $wgExtensionCredits['parserhook'][] = array(
 	'name' => 'MsUpload',
 	'url' => 'http://www.mediawiki.org/wiki/Extension:MsUpload',
-	'version' => '10.0',
+	'version' => '10.3',
 	'descriptionmsg' => 'msu-desc',
-	'license-name' => 'GPLv2+',
+	'license-name' => 'GPL-2.0+',
 	'author' => array( '[mailto:wiki@ratin.de Martin Schwindl]', '[mailto:wiki@keyler-consult.de Martin Keyler]', '[https://www.mediawiki.org/wiki/User:Luis_Felipe_Schenone Luis Felipe Schenone]' ),
 );
 
@@ -26,6 +26,7 @@ $wgResourceModules['ext.MsUpload'] = array(
 		'msu-insert-picture',
 		'msu-insert-movie',
 		'msu-cancel-upload',
+		'msu-replace-file',
 		'msu-clean-all',
 		'msu-upload-possible',
 		'msu-ext-not-allowed',
@@ -38,7 +39,6 @@ $wgResourceModules['ext.MsUpload'] = array(
 	'remoteExtPath' => 'MsUpload',
 );
 
-$wgExtensionMessagesFiles['MsUpload'] = __DIR__ . '/MsUpload.i18n.php';
 $wgMessagesDirs['MsUpload'] = __DIR__ . '/i18n';
 
 $wgAutoloadClasses['MsUpload'] = __DIR__ . '/MsUpload.body.php';
@@ -51,5 +51,6 @@ $wgAjaxExportList[] = 'MsUpload::saveCat';
 $wgMSU_useDragDrop = true;
 $wgMSU_showAutoCat = true;
 $wgMSU_checkAutoCat = true;
-$wgMSU_imgParams = '400px';
 $wgMSU_useMsLinks = false;
+$wgMSU_confirmReplace = true;
+$wgMSU_imgParams = '400px';
