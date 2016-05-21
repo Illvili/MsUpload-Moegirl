@@ -24,7 +24,10 @@
 				"plupload/plupload.full.min.js",
 				"MsUpload.js"
 			],
-			"dependencies": "jquery.ui.progressbar",
+			"dependencies": [
+				"jquery.ui.progressbar",
+				"ext.wikiEditor.toolbar"
+			],
 			"styles": "MsUpload.css",
 			"messages": [
 				"msu-description",
