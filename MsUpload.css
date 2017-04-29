@@ -3,18 +3,18 @@
 }
 
 #upload-container.start-loading {
-	background: url(images/msu_loading.png) no-repeat 5px 5px;
+	background: url(images/msu-loading.png) no-repeat 5px 5px;
 }
 
 #upload-select {
-	background: url(images/msu_upload_button.png) no-repeat 0;
+	background: url(images/msu-upload-button.png) no-repeat 0;
 	width: 20px;
 	height: 20px;
 	cursor: pointer;
 }
 
 #upload-select.old-button {
-	background: url(images/msu_upload_button_old.gif) no-repeat 0;
+	background: url(images/msu-upload-button-old.gif) no-repeat 0;
 	display: inline-block;
 	vertical-align: middle;
 }
@@ -94,33 +94,33 @@
 
 #upload-list .file .file-type {
 	padding: 10px;
-	background: url(images/msu_document-globe.png) no-repeat 0 0;
+	background: url(images/msu-document-globe.png) no-repeat 0 0;
 	position: absolute;
 	margin-top: 5px;
 }
 
 #upload-list .file .picture {
-	background: url(images/msu_document-image.png) no-repeat 0 0;
+	background: url(images/msu-document-image.png) no-repeat 0 0;
 }
 
 #upload-list .file .film {
-	background: url(images/msu_document-film.png) no-repeat 0 0;
+	background: url(images/msu-document-film.png) no-repeat 0 0;
 }
 
 #upload-list .file .pdf {
-	background: url(images/msu_document-pdf.png) no-repeat 0 0;
+	background: url(images/msu-document-pdf.png) no-repeat 0 0;
 }
 
 #upload-list .file .document {
-	background: url(images/msu_document.png) no-repeat 0 0;
+	background: url(images/msu-document.png) no-repeat 0 0;
 }
 
 #upload-list .file .ok {
-	background: url(images/msu_tick.png) no-repeat 0 0;
+	background: url(images/msu-tick.png) no-repeat 0 0;
 }
 
 #upload-list .file .error {
-	background: url(images/msu_error.png) no-repeat 0 0;
+	background: url(images/msu-error.png) no-repeat 0 0;
 }
 
 #upload-list .file .picture_load {
@@ -167,7 +167,7 @@
 }
 
 .ui-progressbar-value.ui-widget-header {
-	background: url(images/msu_progress_stripe.png) repeat-x 0 0;	
+	background: url(images/msu-progress-stripe.png) repeat-x 0 0;	
 }
 
 .ui-progressbar-value.ui-widget-content {
@@ -209,7 +209,7 @@
 }
 
 #upload-list .file .file-cancel {
-	background: url(images/msu_close.png) no-repeat 0 0;
+	background: url(images/msu-close.png) no-repeat 0 0;
 	margin-left: 5px;
 	margin-right: 5px;
 	padding: 3px 10px;
@@ -222,7 +222,7 @@
 }
 
 #upload-list .file .file-loading {
-	background: url(images/msu_loading.png) no-repeat 0 0;
+	background: url(images/msu-loading.png) no-repeat 0 0;
 	margin: 0px 5px;
 	padding: 1px 8px;
 }
@@ -305,7 +305,7 @@ a.hover {
 
 #upload-bottom #upload-files {
 	padding: 3px 0px 3px 25px;
-	background: url(images/msu_upload_icon.png) no-repeat 0 0;
+	background: url(images/msu-upload-icon.png) no-repeat 0 0;
 	height: 12px;
 }
 
